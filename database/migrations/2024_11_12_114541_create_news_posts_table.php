@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('news_posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('projects_id')->nullable();
             $table->json('title');
             $table->json('slug');
             $table->json('introduction');

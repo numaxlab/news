@@ -5,7 +5,6 @@ namespace NumaxLab\NewsPost\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use NumaxLab\NewsPost\Models\NewsPost;
 
 /**
  * Class NewsPostCrudControllerCrudController
@@ -26,7 +25,7 @@ class NewsPostCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(NewsPost::class);
+        CRUD::setModel((config('news-post.new_post_model_namespace')));
         CRUD::setRoute(config('backpack.base.route_prefix') . '/new-post-crud-controller');
         CRUD::setEntityNameStrings('new', 'news');
     }

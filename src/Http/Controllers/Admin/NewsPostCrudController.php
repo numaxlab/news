@@ -111,7 +111,8 @@ class NewsPostCrudController extends CrudController
         CRUD::addField([
             'name' => 'content',
             'label' => __('news_post::backpack_messages.label.content'),
-            'type' => 'wysiwyg'
+            'type' => 'ckeditor',
+            'elfinderOptions' => true,
         ]);
 
         CRUD::addField([

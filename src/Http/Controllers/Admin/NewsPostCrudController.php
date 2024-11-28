@@ -27,7 +27,7 @@ class NewsPostCrudController extends CrudController
     {
         CRUD::setModel((config('news-post.new_post_model_namespace')));
         CRUD::setRoute(config('backpack.base.route_prefix') . '/new-post-crud-controller');
-        CRUD::setEntityNameStrings('new', 'news');
+        CRUD::setEntityNameStrings(__('news_post::backpack_messages.new'), __('news_post::backpack_messages.news'));
     }
 
     /**
@@ -41,18 +41,18 @@ class NewsPostCrudController extends CrudController
         CRUD::column('id');
         CRUD::addColumn([
             'name' => 'title',
-            'label' => 'Título',
+            'label' => __('news_post::backpack_messages.label.title'),
             'type' => 'text',
         ]);
         CRUD::addColumn([
             'name' => 'published_at',
-            'label' => 'Fecha de publicación',
+            'label' => __('news_post::backpack_messages.label.published_at'),
             'type' => 'datetime',
             'format' => 'DD/MM/YYYY HH:mm:ss',
         ]);
         CRUD::addColumn([
             'name' => 'is_public',
-            'label' => 'Pública',
+            'label' => __('news_post::backpack_messages.label.is_public'),
             'type' => 'check',
         ]);
     }
@@ -87,7 +87,7 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'title',
-            'label' => 'Título',
+            'label' => __('news_post::backpack_messages.label.title'),
             'type' => 'text'
         ]);
 
@@ -101,44 +101,47 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'introduction',
-            'label' => 'Introducción',
-            'type' => 'wysiwyg'
+            'label' => __('news_post::backpack_messages.label.introduction'),
+            'type' => 'textarea',
+            'attributes' => [
+                'rows' => 5,
+            ]
         ]);
 
         CRUD::addField([
             'name' => 'content',
-            'label' => 'Contenido',
+            'label' => __('news_post::backpack_messages.label.content'),
             'type' => 'wysiwyg'
         ]);
 
         CRUD::addField([
             'name' => 'image_file_path',
-            'label' => 'Imagen',
+            'label' => __('news_post::backpack_messages.label.image'),
             'type' => 'image',
             'withFiles' => [
                 'disk' => 'public',
-                'path' => 'posts',
+                'path' => __('news_post::backpack_messages.folders.news_posts'),
             ],
-            'hint' => 'Dimensiones mínimas recomendadas: 1392x779px'
+            'hint' => __('news_post::backpack_messages.hints.minimum_recommended_dimensions') . ': 1392x779px'
 
         ]);
 
         CRUD::addField([
             'name' => 'caption',
-            'label' => 'Pie de foto',
+            'label' => __('news_post::backpack_messages.label.caption'),
             'type' => 'text'
         ]);
 
         CRUD::addfield([
             'name' => 'published_at',
-            'label' => 'Fecha de publicación',
+            'label' => __('news_post::backpack_messages.label.published_at'),
             'type' => 'datetime_picker',
             'wrapper' => ['class' => 'form-group col-md-6']
         ]);
 
         CRUD::addField([
             'name' => 'is_public',
-            'label' => 'Pública',
+            'label' => __('news_post::backpack_messages.label.is_public'),
             'type' => 'checkbox',
             'wrapper' => ['class' => 'form-group col-md-6 mt-md-5']
         ]);

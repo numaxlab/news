@@ -42,18 +42,18 @@ class NewsPostCrudController extends CrudController
         CRUD::column('id');
         CRUD::addColumn([
             'name' => 'title',
-            'label' => __('news-post::backpack_messages.label.title'),
+            'label' => __('news-post::backpack_messages.labels.title'),
             'type' => 'text',
         ]);
         CRUD::addColumn([
             'name' => 'published_at',
-            'label' => __('news-post::backpack_messages.label.published_at'),
+            'label' => __('news-post::backpack_messages.labels.published_at'),
             'type' => 'datetime',
             'format' => 'DD/MM/YYYY HH:mm:ss',
         ]);
         CRUD::addColumn([
             'name' => 'is_public',
-            'label' => __('news-post::backpack_messages.label.is_public'),
+            'label' => __('news-post::backpack_messages.labels.is_public'),
             'type' => 'check',
         ]);
     }
@@ -88,7 +88,7 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'title',
-            'label' => __('news-post::backpack_messages.label.title'),
+            'label' => __('news-post::backpack_messages.labels.title'),
             'type' => 'text'
         ]);
 
@@ -102,7 +102,7 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'introduction',
-            'label' => __('news-post::backpack_messages.label.introduction'),
+            'label' => __('news-post::backpack_messages.labels.introduction'),
             'type' => 'textarea',
             'attributes' => [
                 'rows' => 5,
@@ -111,14 +111,14 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'content',
-            'label' => __('news-post::backpack_messages.label.content'),
+            'label' => __('news-post::backpack_messages.labels.content'),
             'type' => 'ckeditor',
             'elfinderOptions' => true,
         ]);
 
         CRUD::addField([
             'name' => 'image_file_path',
-            'label' => __('news-post::backpack_messages.label.image'),
+            'label' => __('news-post::backpack_messages.labels.image'),
             'type' => 'image',
             'withFiles' => [
                 'disk' => 'public',
@@ -130,20 +130,20 @@ class NewsPostCrudController extends CrudController
 
         CRUD::addField([
             'name' => 'caption',
-            'label' => __('news-post::backpack_messages.label.caption'),
+            'label' => __('news-post::backpack_messages.labels.caption'),
             'type' => 'text'
         ]);
 
         CRUD::addfield([
             'name' => 'published_at',
-            'label' => __('news-post::backpack_messages.label.published_at'),
+            'label' => __('news-post::backpack_messages.labels.published_at'),
             'type' => 'datetime_picker',
             'wrapper' => ['class' => 'form-group col-md-6']
         ]);
 
         CRUD::addField([
             'name' => 'is_public',
-            'label' => __('news-post::backpack_messages.label.is_public'),
+            'label' => __('news-post::backpack_messages.labels.is_public'),
             'type' => 'checkbox',
             'wrapper' => ['class' => 'form-group col-md-6 mt-md-5']
         ]);

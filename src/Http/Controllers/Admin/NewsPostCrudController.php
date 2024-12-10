@@ -25,7 +25,7 @@ class NewsPostCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel((config('news-post.new_post_model_namespace')));
+        CRUD::setModel(config('news-post.new_post_model_namespace'));
         CRUD::setRoute(config('backpack.base.route_prefix') . '/new-post-crud-controller');
         CRUD::setEntityNameStrings(__('news-post::backpack_messages.new'), __('news-post::backpack_messages.news'));
     }
@@ -124,7 +124,9 @@ class NewsPostCrudController extends CrudController
                 'disk' => 'public',
                 'path' => __('news-post::backpack_messages.folders.news_posts'),
             ],
-            'hint' => __('news-post::backpack_messages.hints.minimum_recommended_dimensions') . ': 1392x779px'
+            'hint' => __('news-post::backpack_messages.hints.minimum_recommended_dimensions') . ': ' . config(
+                    'news-post.image_min_width'
+                ) . 'x' . config('news-post.image_min_height')
 
         ]);
 

@@ -35,7 +35,7 @@ class Install extends Command
         $this->executeArtisanProcess('backpack:add-menu-content', [
             'code' => '<x-backpack::menu-item title="' . __(
                     'new-post::backpack_messages.news'
-                ) . '" icon="la la-question" :link="backpack_url(\'new-post-crud-controller\')" />',
+                ) . '" icon="la la-newspaper" :link="backpack_url(\'new-post-crud-controller\')" />',
         ]);
 
         $this->closeProgressBlock();
